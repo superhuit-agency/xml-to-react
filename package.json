@@ -2,16 +2,14 @@
   "name": "@condenast/xml-to-react",
   "version": "1.0.0",
   "description": "Converts an XML document into a React tree",
-  "main": "dist/commonjs/XMLToReact.js",
-  "module": "dist/modules/XMLToReact.js",
-  "browser": "dist/browser/XMLToReact.js",
+  "main": "src/index.ts",
   "directories": {
     "lib": "src",
     "test": "test"
   },
   "scripts": {
-    "build": "rollup -c",
-    "clean": "rm -rf dist",
+    "build": "tsc --build",
+    "clean": "tsc --build --clean",
     "lint": "eslint .",
     "prepublishOnly": "npm run clean && npm run build",
     "pretest": "eslint .",
@@ -52,7 +50,8 @@
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-commonjs": "^10.0.0",
     "rollup-plugin-node-resolve": "^5.0.0",
-    "rollup-plugin-peer-deps-external": "^2.0.0"
+    "rollup-plugin-peer-deps-external": "^2.0.0",
+    "typescript": "^4.9.5"
   },
   "peerDependencies": {
     "react": "^18.2.0"
