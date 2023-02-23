@@ -1,16 +1,17 @@
 {
-    "compilerOptions": {
-      "noImplicitAny": false,
-      "noEmitOnError": true,
-      "removeComments": false,
-      "sourceMap": true,
-      "target": "es5",
-      "outDir": "dist"
-    },
-    "include": [
-      "src/**/*"
-    ],
-    "exclude": [
-      "node_modules"
-    ]
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "noEmitOnError": true,
+    "removeComments": false,
+    "sourceMap": true,
+    "target": "ES6",
+    "outDir": "dist",
+    "moduleResolution": "node"
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
