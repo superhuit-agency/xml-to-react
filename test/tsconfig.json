@@ -1,0 +1,16 @@
+{
+    "ts-node": {
+     "files": true
+    },
+    "compilerOptions": {
+        "jsx": "react",
+        "lib": ["ES6"],
+        "module": "commonjs",
+        "target": "ES6",
+        "sourceMap": true,
+        "inlineSources": false,
+        "esModuleInterop": true,
+        "resolveJsonModule": true
+    },
+    "include": ["test/**/*"]
+}
