@@ -12,8 +12,5 @@
         "esModuleInterop": true,
         "resolveJsonModule": true
     },
-    "files": [
-     "jsx.d.ts"
-    ],
     "include": ["test/**/*"]
 }

@@ -3,7 +3,7 @@ import XMLToReact from '../src/index';
 import {expect} from 'chai';
 import * as enzyme from 'enzyme';
 
-function MyListItem({children, i}): JSX.Element {
+function MyListItem({children, i}: {children: Array<HTMLElement>, i: number}): JSX.Element {
   return (<li data-i={i}>{children}</li>);
 }
 
@@ -31,7 +31,6 @@ describe('XmlToReact', () => {
       Item: (attrs) => ({type: MyListItem, props: attrs})
     });
 
-    // @ts-ignore
     expect(xmlToReact.convert({})).to.be.equal(null);
   });
 
@@ -41,7 +40,6 @@ describe('XmlToReact', () => {
       span: (attrs) => ({type: 'span', props: attrs})
     });
 
-    // @ts-ignore
     expect(xmlToReact.convert('<div>hello')).to.be.equal(null);
   });
 

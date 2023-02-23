@@ -1,3 +1,5 @@
-require('ts-node').register({
+import {register} from 'ts-node'
+
+register({
     project: './test/tsconfig.json',
  });

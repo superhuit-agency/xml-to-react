@@ -11,7 +11,7 @@ export default class XMLToReact {
 
     }
 
-    convert(xml: string, data?: object): React.ReactElement<any> | null {
+    convert(xml: string, data?: object): React.ReactElement<Element> | null {
         if (typeof xml !== 'string')
         return null;
 
@@ -32,7 +32,7 @@ export default class XMLToReact {
         return result;    
     }
 
-    private _visitNode(node: HTMLElement, index: number, converters: any, data?: object): React.ReactElement | string | null {
+    private _visitNode(node: HTMLElement, index: number, converters: object, data?: object): React.ReactElement | string | null {
         if (!node)
             return null;
     
@@ -59,14 +59,14 @@ export default class XMLToReact {
         const newProps = {...{key: index}, ...props};
     
         const children = this._getChildren(node);
-        const childElements = children.map((child: any, childIndex: any) =>
+        const childElements = children.map((child: HTMLElement, childIndex: number) =>
             this._visitNode(child, childIndex, converters, data)
         );
-    
-        return React.createElement.apply(undefined, [type, newProps, ...this._toConsumableArray(childElements)]);
+  
+        return React.createElement.apply(undefined, [type, newProps, ...Array.from(childElements)]);
     }
 
-    private _getAttributes(node: any): any {
+    private _getAttributes(node: HTMLElement): object {
         if (!node)
             return {};
     
@@ -75,33 +75,27 @@ export default class XMLToReact {
         if (!attributes || !attributes.length)
             return {};
     
-        return Array.from(attributes).reduce((results: any, attr: any) => {
+        return Array.from(attributes).reduce((results: object, attr: Attr) => {
             const name: string = attr['name'];
-            const value: any = attr['value'];
+            const value: string = attr['value'];
     
             results[name] = value;
             return results;
         }, {});
     }
     
-    private _getChildren(node: any): any {
+    private _getChildren(node: HTMLElement): Array<HTMLElement> {
         if (!node)
             return [];
     
-        var children = node.childNodes;
+        const children = node.childNodes;
     
         if (!children)
             return [];
     
-        return children.length ? Array.from(children) : [];
-    }
-    
-    private _toConsumableArray(arr : any) : any[] {
-        if (Array.isArray(arr))
-            return [...arr];
-        else
-            return Array.from(arr);
-    }
-    
+        return children.length 
+            ? Array.from(children) as Array<HTMLElement> 
+            : [];
+    }   
     
 }

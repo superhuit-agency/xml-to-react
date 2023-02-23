@@ -16,7 +16,7 @@ const globalNode: Global = {
 if (!globalNode.window && !globalNode.document) {
   const { window } = new JSDOM('<!doctype html><html><body></body></html>', {
     beforeParse(win) {
-      win.scrollTo = () => {};
+      win.scrollTo = () => null;
     },
     pretendToBeVisual: false,
     userAgent: 'mocha',
