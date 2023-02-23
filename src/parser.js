@@ -1,4 +1,4 @@
-import { DOMParser } from 'xmldom';
+import { DOMParser } from '@xmldom/xmldom';
 
 export const ERR_INVALID_XML = 'XMLToReact: Unable to parse invalid XML input. Please input valid XML.';
 

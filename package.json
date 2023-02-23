@@ -24,9 +24,6 @@
   "license": "Apache-2.0",
   "bugs": "https://github.com/CondeNast/xml-to-react/issues",
   "homepage": "https://github.com/CondeNast/xml-to-react#readme",
-  "dependencies": {
-    "xmldom": "^0.6.0"
-  },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
@@ -55,5 +52,8 @@
   },
   "peerDependencies": {
     "react": "^18.2.0"
+  },
+  "dependencies": {
+    "@xmldom/xmldom": "^0.8.6"
   }
 }
