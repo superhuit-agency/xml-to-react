@@ -3,6 +3,7 @@
     "noImplicitAny": false,
     "noEmitOnError": true,
     "removeComments": false,
+    "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "target": "ES6",
     "outDir": "dist",

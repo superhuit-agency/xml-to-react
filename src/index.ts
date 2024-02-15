@@ -2,8 +2,8 @@
 import {DOMParser} from '@xmldom/xmldom'
 
 export default class XMLToReact {
-    private _converters: object;
-    private _parser: DOMParser;
+    _converters: object;
+    _parser: DOMParser;
 
     constructor(converters: object) {
         this._converters = converters;
@@ -36,8 +36,8 @@ export default class XMLToReact {
         if (!node)
             return null;
     
-        const tagName = node.tagName;
-        const nodeType = node.nodeType;
+        const tagName: string = node.tagName;
+        const nodeType: number = node.nodeType;
     
         if (nodeType === 3)
             return node.nodeValue;
@@ -45,7 +45,7 @@ export default class XMLToReact {
         if (!tagName)
             return null;
     
-        const converter = converters[tagName];
+        const converter: () => React.ReactElement = converters[tagName];
     
         if (typeof converter !== 'function') 
             return null;
