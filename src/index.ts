@@ -1,17 +1,22 @@
  import React from 'react';
 import {DOMParser} from '@xmldom/xmldom'
 
+interface Converters {
+  // Define the shape of your converter functions here
+  [key: string]: (node: any, index: number) => any; // Replace `any` with the actual types if known
+}
+
 export default class XMLToReact {
-    _converters: object;
+    _converters: Converters;
     _parser: DOMParser;
 
-    constructor(converters: object) {
+    constructor(converters: Converters) {
         this._converters = converters;
         this._parser = new DOMParser({errorHandler: (msg) => {throw new Error(msg)}});
 
     }
 
-    convert(xml: string, data?: object): React.ReactElement<Element> | null {
+    convert(xml: string, data?: any): React.ReactElement<Element> | null {
         if (typeof xml !== 'string')
         return null;
 
@@ -45,7 +50,7 @@ export default class XMLToReact {
         if (!tagName)
             return null;
     
-        const converter: () => React.ReactElement = converters[tagName];
+        const converter = converters[tagName];
     
         if (typeof converter !== 'function') 
             return null;
