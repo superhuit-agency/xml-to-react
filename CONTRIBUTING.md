@@ -12,7 +12,7 @@ This project and everyone participating in it is governed by a [Code of Conduct]
 
 #### Did you find a bug, want to add a feature, or have questions about the code?
 
-Open a [new issue](https://github.com/CondeNast/xml-to-react/issues/new). Follow the provided template as a guideline.
+Open a [new issue](https://github.com/superhuit-agency/xml-to-react/issues/new). Follow the provided template as a guideline.
 
 #### Did you write a patch that fixes a bug?
 
@@ -28,7 +28,7 @@ You must use Node.js version 8.9.x and npm version 5.x for development.
 
 In order to make changes to the code, run the run the following commands in your terminal:
 ```sh
-$ git clone https://github.com/CondeNast/xml-to-react.git
+$ git clone https://github.com/superhuit-agency/xml-to-react.git
 $ cd xml-to-react
 $ npm i
 ```

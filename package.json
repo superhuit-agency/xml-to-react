@@ -1,23 +1,34 @@
 {
-  "name": "@condenast/xml-to-react",
-  "version": "1.0.0",
+  "name": "@superhuit/xml-to-react",
+  "version": "2.0.0",
   "description": "Converts an XML document into a React tree",
-  "main": "src/index.ts",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "tsc --build",
+    "prepublish": "npm run build",
+    "build": "tsc --build && npx --yes ncp ./src/index.d.ts ./dist/index.d.ts",
     "clean": "tsc --build --clean",
     "test": "ts-mocha -p test/tsconfig.json test/**/*.tsx  -r unitTestSetup.ts",
     "lint": "eslint .",
     "typescript": "npx tsc --noEmit -p ./tsconfig.json"
   },
-  "repository": "https://github.com/CondeNast/xml-to-react",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/superhuit-agency/xml-to-react.git"
+  },
   "contributors": [
     "Phil Gold <phil_gold@condenast.com>",
-    "Daniel Taveras <daniel_taveras@condenast.com>"
+    "Daniel Taveras <daniel_taveras@condenast.com>",
+    "Felipe Paul Martins <felipe.paulmartins@outlook.com>",
+    "Superhuit <tech@superhuit.ch>"
   ],
   "license": "Apache-2.0",
-  "bugs": "https://github.com/CondeNast/xml-to-react/issues",
-  "homepage": "https://github.com/CondeNast/xml-to-react#readme",
+  "bugs": "https://github.com/superhuit-agency/xml-to-react/issues",
+  "homepage": "https://github.com/superhuit-agency/xml-to-react#readme",
   "devDependencies": {
     "@cfaester/enzyme-adapter-react-18": "^0.7.1",
     "@types/expect": "^24.3.0",

@@ -2,22 +2,18 @@
 
 Converts an XML document into a React tree.
 
+> ℹ️ Fork of the unmaintained Conde Nast implementation to support React 18, upgrade dependencies and convert to Typescript.
+
 [![license](https://img.shields.io/badge/license-Apache%202.0-blue.svg?style=flat)](LICENSE)
-[![Build Status](https://travis-ci.org/CondeNast/xml-to-react.svg?branch=master)](https://travis-ci.org/CondeNast/xml-to-react)
-[![Coverage Status](https://coveralls.io/repos/github/CondeNast/xml-to-react/badge.svg)](https://coveralls.io/github/CondeNast/xml-to-react)
-
-_Proudly built by:_
-
-<a href="https://technology.condenast.com"><img src="https://user-images.githubusercontent.com/1215971/35070721-3f136cdc-fbac-11e7-81b4-e3aa5cc70a17.png" title="Conde Nast Technology" width=350/></a>
 
 ## Prerequisites
 
- This library may only be used in projects using React version 0.13.x or greater.
+ This library may only be used in projects using React version 18 or greater.
 
 ## Installation
 
 ```sh
-npm install --save @condenast/xml-to-react
+npm install --save @superhuit/xml-to-react
 ```
 
 This assumes you are using [npm](https://www.npmjs.com/) as your package manager.
@@ -25,7 +21,7 @@ This assumes you are using [npm](https://www.npmjs.com/) as your package manager
 ## Usage
 
 ```js
-import XMLToReact from '@condenast/xml-to-react';
+import XMLToReact from '@superhuit/xml-to-react';
 
 const xmlToReact = new XMLToReact({/* converters */});
 const reactTree = xmlToReact.convert(/* XML string */);
@@ -37,7 +33,7 @@ Convert XML nodes into DOM elements with any provided attributes
 
 ```js
 import ReactDOM from 'react-dom';
-import XMLToReact from '@condenast/xml-to-react';
+import XMLToReact from '@superhuit/xml-to-react';
 import MyListItem from './MyListItem';
 
 const xmlToReact = new XMLToReact({
@@ -115,13 +111,14 @@ The `XMLToReact` class is instantiated with a map of converters.
 
 ## Thanks
 
+* [xml-to-react](https://github.com/CondeNast/xml-to-react).
 * [xmldom](https://github.com/jindw/xmldom) for providing a solid XML parser.
 * [Rollup](https://github.com/rollup/rollup) for simple and quick module bundling.
 * [React](https://github.com/facebook/react) for the innovation.
 
 ## Contributors
 
-See the list of [contributors](https://github.com/CondeNast/xml-to-react/contributors) who participated in writing this library.
+See the list of [contributors](https://github.com/superhuit-agency/xml-to-react/contributors) who participated in writing this library.
 ## Maintainers
 
  * Daniel Taveras (@taveras)
