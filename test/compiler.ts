@@ -1,5 +1,5 @@
-import {register} from 'ts-node'
+import { register } from "ts-node";
 
 register({
-    project: './test/tsconfig.json',
- });
+  project: "./test/tsconfig.json",
+});
